@@ -1,8 +1,8 @@
 # Simple Viewer (Node.js)
 
 ![platforms](https://img.shields.io/badge/platform-windows%20%7C%20osx%20%7C%20linux-lightgray.svg)
-[![node.js](https://img.shields.io/badge/Node.js-16.16-blue.svg)](https://nodejs.org)
-[![npm](https://img.shields.io/badge/npm-8.11-blue.svg)](https://www.npmjs.com/)
+[![node.js](https://img.shields.io/badge/Node.js-20.13-blue.svg)](https://nodejs.org)
+[![npm](https://img.shields.io/badge/npm-10.5-blue.svg)](https://www.npmjs.com/)
 [![license](https://img.shields.io/:license-mit-green.svg)](https://opensource.org/licenses/MIT)
 
 [Autodesk Platform Services](https://aps.autodesk.com) application built by following
