@@ -37,7 +37,7 @@ service.ensureBucketExists = async (bucketKey) => {
         if (err.axiosError.response.status === 404) { 
             await ossClient.createBucket(access_token, Region.Us, {
                 bucketKey: bucketKey,
-                policyKey: PolicyKey.Temporary
+                policyKey: PolicyKey.Persistent
             });
         } else {
             throw err;  
