@@ -10,12 +10,11 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@aps_sdk/authentication": "0.1.0-beta.1",
-    "@aps_sdk/autodesk-sdkmanager": "0.0.7-beta.1",
-    "@aps_sdk/model-derivative": "0.1.0-beta.1",
-    "@aps_sdk/oss": "0.1.0-beta.1",
-    "dotenv": "^16.4.1",
-    "express": "^4.18.2",
+    "@aps_sdk/model-derivative": "file:packages/aps_sdk-model-derivative-1.0.0-beta.1.tgz",
+    "@aps_sdk/authentication": "file:packages/aps_sdk-authentication-1.0.0-beta.1.tgz",
+    "@aps_sdk/oss": "file:packages/aps_sdk-oss-1.0.0-beta.1.tgz",
+    "dotenv": "^16.3.1",
+    "express": "^4.17.1",
     "express-formidable": "^1.2.0"
   },
   "devDependencies": {

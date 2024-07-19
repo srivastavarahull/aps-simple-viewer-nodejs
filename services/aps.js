@@ -1,7 +1,7 @@
 const { SdkManagerBuilder } = require('@aps_sdk/autodesk-sdkmanager');
+const { ModelDerivativeClient, View, Region, OutputType } = require('@aps_sdk/model-derivative');
+const { OssClient, PolicyKey } = require('@aps_sdk/oss');
 const { AuthenticationClient, Scopes } = require('@aps_sdk/authentication');
-const { OssClient, CreateBucketsPayloadPolicyKeyEnum, CreateBucketXAdsRegionEnum } = require('@aps_sdk/oss');
-const { ModelDerivativeClient, View, Type } = require('@aps_sdk/model-derivative');
 const { APS_CLIENT_ID, APS_CLIENT_SECRET, APS_BUCKET } = require('../config.js');
 
 const sdk = SdkManagerBuilder.create().build();
@@ -34,10 +34,10 @@ service.ensureBucketExists = async (bucketKey) => {
     try {
         await ossClient.getBucketDetails(access_token, bucketKey);
     } catch (err) {
-        if (err.axiosError.response.status === 404) {
-            await ossClient.createBucket(access_token, CreateBucketXAdsRegionEnum.Us, {
+        if (err.axiosError.response.status === 404) { 
+            await ossClient.createBucket(access_token, Region.Us, {
                 bucketKey: bucketKey,
-                policyKey: CreateBucketsPayloadPolicyKeyEnum.Persistent
+                policyKey: PolicyKey.Temporary
             });
         } else {
             throw err;  
@@ -76,7 +76,7 @@ service.translateObject = async (urn, rootFilename) => {
         output: {
             formats: [{
                 views: [View._2d, View._3d],
-                type: Type.Svf
+                type: OutputType.Svf
             }]
         }
     });
